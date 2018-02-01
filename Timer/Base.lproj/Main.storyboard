@@ -1,24 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GrY-vZ-zZR">
+                                <rect key="frame" x="0.0" y="13" width="375" height="96"/>
+                                <color key="barTintColor" red="0.76212388277053833" green="0.29668674418470808" blue="0.26257110324022215" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.98939165610000002" green="0.98939165610000002" blue="0.98939165610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" red="0.98939165610000002" green="0.98939165610000002" blue="0.98939165610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Timer" id="ZcP-zQ-qe2">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="zfd-jn-7GN">
+                                            <color key="tintColor" red="0.98939165610000002" green="0.98939165610000002" blue="0.98939165610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <connections>
+                                                <action selector="refresh:" destination="BYZ-38-t0r" id="tD8-YI-8yd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyj-QT-cyr">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="+10s" id="R06-bz-ZC8">
+                                        <color key="tintColor" red="0.98939165610000002" green="0.98939165610000002" blue="0.98939165610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="plusTen:" destination="BYZ-38-t0r" id="AL7-8g-cy1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6Ay-uf-xHi">
+                                        <color key="tintColor" red="0.98939165610000002" green="0.98939165610000002" blue="0.98939165610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="pause" id="xkf-wM-gKe">
+                                        <color key="tintColor" red="0.98939165610000002" green="0.98939165610000002" blue="0.98939165610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="pause:" destination="BYZ-38-t0r" id="EZ5-Ye-yGr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cGH-Z2-lVF">
+                                        <color key="tintColor" red="0.98939165610000002" green="0.98939165610000002" blue="0.98939165610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="play" id="lqs-Gd-0OF">
+                                        <color key="tintColor" red="0.98939165610000002" green="0.98939165610000002" blue="0.98939165610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="play:" destination="BYZ-38-t0r" id="CaV-Zu-jEC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.76212388279999999" green="0.29668674420000002" blue="0.26257110319999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="acr-kv-3cH">
+                                <rect key="frame" x="10" y="169" width="355" height="131.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ipr-qf-upZ">
+                                        <rect key="frame" x="10" y="0.0" width="335" height="105.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lau-dl-ecF">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="105.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="89"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="bDA-4v-Jg2">
+                                        <rect key="frame" x="108.5" y="105.5" width="138" height="26"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zdP-br-sya">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="26"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Secs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uC2-84-POm">
+                                                <rect key="frame" x="89" y="0.0" width="49" height="26"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ipr-qf-upZ" firstAttribute="leading" secondItem="acr-kv-3cH" secondAttribute="leading" constant="10" id="6YT-qe-iUK"/>
+                                    <constraint firstAttribute="trailing" secondItem="ipr-qf-upZ" secondAttribute="trailing" constant="10" id="DFD-Is-v8C"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iCp-4z-lpj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="13"/>
+                                <color key="backgroundColor" red="0.76212388279999999" green="0.29668674420000002" blue="0.26257110319999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dbQ-7E-MIe">
+                                <rect key="frame" x="0.0" y="330" width="375" height="241"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="241" id="f9L-bz-wic"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yyj-QT-cyr" firstAttribute="leading" secondItem="dbQ-7E-MIe" secondAttribute="leading" id="5gm-sq-ZMS"/>
+                            <constraint firstItem="dbQ-7E-MIe" firstAttribute="leading" secondItem="GrY-vZ-zZR" secondAttribute="leading" id="7qD-za-isA"/>
+                            <constraint firstItem="yyj-QT-cyr" firstAttribute="trailing" secondItem="dbQ-7E-MIe" secondAttribute="trailing" id="BdH-FS-8I8"/>
+                            <constraint firstItem="dbQ-7E-MIe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Cp9-0h-J2e"/>
+                            <constraint firstItem="iCp-4z-lpj" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Dbd-6X-4iV"/>
+                            <constraint firstItem="acr-kv-3cH" firstAttribute="centerX" secondItem="dbQ-7E-MIe" secondAttribute="centerX" id="IeP-a1-eQh"/>
+                            <constraint firstItem="acr-kv-3cH" firstAttribute="top" secondItem="GrY-vZ-zZR" secondAttribute="bottom" constant="60" id="LRN-SB-cSo"/>
+                            <constraint firstItem="dbQ-7E-MIe" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="330" id="LVc-sJ-MH1"/>
+                            <constraint firstItem="acr-kv-3cH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="NZr-qW-lA4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="acr-kv-3cH" secondAttribute="trailing" constant="10" id="XMV-65-J9y"/>
+                            <constraint firstItem="iCp-4z-lpj" firstAttribute="bottom" secondItem="GrY-vZ-zZR" secondAttribute="top" id="XY7-Bf-waK"/>
+                            <constraint firstItem="acr-kv-3cH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a0g-Mv-Crb"/>
+                            <constraint firstItem="iCp-4z-lpj" firstAttribute="leading" secondItem="GrY-vZ-zZR" secondAttribute="leading" id="gxn-QP-N1y"/>
+                            <constraint firstItem="yyj-QT-cyr" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="lfe-yv-owU"/>
+                            <constraint firstItem="acr-kv-3cH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="169" id="miG-Oz-KFQ"/>
+                            <constraint firstItem="iCp-4z-lpj" firstAttribute="trailing" secondItem="GrY-vZ-zZR" secondAttribute="trailing" id="pdt-6u-dQz"/>
+                            <constraint firstItem="acr-kv-3cH" firstAttribute="centerX" secondItem="GrY-vZ-zZR" secondAttribute="centerX" id="txT-fV-8yf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="timePicker" destination="dbQ-7E-MIe" id="xIh-iG-LZ3"/>
+                        <outlet property="timerLbl" destination="Lau-dl-ecF" id="Zym-8l-OUR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
